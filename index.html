@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISHRA HOTEL - Street Food Delights</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+           box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #fcf8f2;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d35400;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d35400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: #d35400;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #d35400;
+            margin: 10px auto 0;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            width: 350px;
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .menu-info h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .menu-info p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #f39c12;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .menu-card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">MISHRA HOTEL</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>MISHRA HOTEL</h1>
+        <p>The Ultimate Destination for Authentic Bada Pao & Steaming Momos</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Our Specialties</h2>
+        <div class="menu-container">
+            
+            <!-- Item 1: Bada Pao -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=500" alt="Bada Pao" class="menu-img">
+                <div class="menu-info">
+                    <h3>Classic Mumbai Bada Pao</h3>
+                    <p>Golden-fried spiced potato wada snuggled inside a soft bun, laced with spicy garlic chutney and served with a fried green chili.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹20</span>
+                        <a href="#" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Momos -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=500" alt="Momos" class="menu-img">
+                <div class="menu-info">
+                    <h3>Steamed & Fried Momos</h3>
+                    <p>Delicately wrapped, juicy veg or chicken fillings, steamed to perfection or fried crisp. Served with our signature fiery red chili dip.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹60</span>
+                        <a href="#" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Order</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About/Info Section -->
+    <section class="info-section" id="about">
+        <div class="info-container">
+            <h2>Fresh. Spicy. Unforgettable.</h2>
+            <p style="margin-top: 15px; font-size: 1.1rem;">
+                At MISHRA HOTEL, we bring together the best of street flavors. Whether you crave the comforting crunch of a classic Bada Pao or the juicy punch of hot Momos, we have got your cravings covered.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MISHRA HOTEL. All Rights Reserved.| Owner-Mr. Santanu Mishra| contract No - 9692842456 | Hotel Manager - Mr. Sushil Panda | Alternative Owner- Mr.Prashanjit Malick | Head Chef Mrs.Rupali Priyadarshani | Visit us for the best snacks in town!</p>
+    </footer>
+
+</body>
+</html>
+
