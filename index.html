@@ -3,146 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mishra Hotel</title>
+    <title>MISHRA HOTEL - Street Food Delights</title>
     <style>
-        /* Base styles */
-        body { font-family: sans-serif; margin: 0; background-color: #fcf8f2; }
-        
-        /* Fixed Header */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: white; color: #d35400; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo { font-size: 1.5rem; font-weight: bold; }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #333; }
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+           box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        /* Hero Section (Photo 1) */
-        .hero { position: relative; margin-top: 60px; text-align: center; color: white; background: url('image_21.png') center/cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .hero h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 20px; }
-        .hero p { color: #f1c40f; font-size: 1.5rem; max-width: 600px; margin-bottom: 30px; }
-        .hero .btn { background-color: #d35400; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-decoration: none; }
+        body {
+            color: #333;
+            background-color: #fcf8f2;
+            line-height: 1.6;
+        }
 
-        /* Content Sections */
-        .section-title { text-align: center; font-size: 2.5rem; color: #333; margin: 60px 0 20px; }
-        .section-underline { width: 60px; height: 3px; background-color: #d35400; margin: 0 auto 40px; }
-        .content-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-        /* Menu Card (Photo 2 & 3) */
-        .card { background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 20px; }
-        .card-title { font-size: 1.2rem; color: #333; margin-bottom: 10px; }
-        .card-text { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
-        .card-footer { display: flex; justify-content: space-between; align-items: center; }
-        .price { color: #d35400; font-weight: bold; font-size: 1.3rem; }
-        .btn-order { background-color: #d35400; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-decoration: none; }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
 
-        /* Footer (Photo 4) */
-        footer { background-color: #f1c40f; color: #d35400; padding: 40px 20px; text-align: center; }
-        .footer-tagline { font-size: 2rem; font-weight: bold; margin-bottom: 30px; }
-        .footer-details { max-width: 600px; margin: 0 auto; color: #555; }
-        .footer-payment { background-color: white; color: #333; padding: 30px; border-radius: 10px; margin-top: 40px; display: inline-block; }
-        .footer-payment h3 { margin-bottom: 15px; }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d35400;
+        }
 
-        /* Sidenav */
-        .sidenav { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #2c3e50; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
-        .sidenav a { padding: 15px 32px; text-decoration: none; font-size: 20px; color: #fff; display: block; }
-        .sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 35px; }
-        
-        /* Mobile Menu Button */
-        .menu-btn { font-size: 30px; color: #333; cursor: pointer; display: none; }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d35400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: #d35400;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #d35400;
+            margin: 10px auto 0;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            width: 350px;
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .menu-info h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .menu-info p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #f39c12;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header nav { display: none; }
-            .menu-btn { display: block; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .menu-card { width: 100%; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="logo">MISHRA HOTEL</div>
-        <div class="menu-btn" onclick="openNav()">&#9776;</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
+        <nav class="navbar">
+            <div class="logo">MISHRA HOTEL</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#payment">Payment</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="mySideNav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#payment">Payment</a>
-    </div>
-
-    <div class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <h1>MISHRA HOTEL</h1>
-        <p>The Ultimate Destination for Authentic Bada Pav & Steaming Momos</p>
+        <p>The Ultimate Destination for Authentic Bada Pao & Steaming Momos</p>
         <a href="#menu" class="btn">Explore Menu</a>
-    </div>
+    </section>
 
-    <div id="menu">
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
         <h2 class="section-title">Our Specialties</h2>
-        <div class="section-underline"></div>
-        <div class="content-container">
-            <div class="card">
-                <img src="image_22.png" alt="Mumbai Bada Pav">
-                <div class="card-body">
-                    <h3 class="card-title">Classic Mumbai Bada Pav</h3>
-                    <p class="card-text">Golden-fried spiced potato wada snuggled inside a soft bun, laced with spicy garlic chutney and served with a fried green chili.</p>
-                    <div class="card-footer">
-                        <span class="price">₹20</span>
-                        <a href="tel:9692842456" class="btn-order">Order</a>
-                    </div>
-                </div>
-            </div>
+        <div class="menu-container">
             
-            <div class="card">
-                <img src="image_23.png" alt="Steamed and Fried Momos">
-                <div class="card-body">
-                    <h3 class="card-title">Steamed & Fried Momos</h3>
-                    <p class="card-text">Delicately wrapped, juicy veg or chicken fillings, steamed to perfection or fried crisp. Served with our signature fiery red chili dip.</p>
-                    <div class="card-footer">
-                        <span class="price">₹60</span>
-                        <a href="tel:9692842456" class="btn-order">Order</a>
+            <!-- Item 1: Bada Pao -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=500" alt="Bada Pao" class="menu-img">
+                <div class="menu-info">
+                    <h3>Classic Mumbai Bada Pao</h3>
+                    <p>Golden-fried spiced potato wada snuggled inside a soft bun, laced with spicy garlic chutney and served with a fried green chili.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹20</span>
+                        <a href="#" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Order</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Item 2: Momos -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=500" alt="Momos" class="menu-img">
+                <div class="menu-info">
+                    <h3>Steamed & Fried Momos</h3>
+                    <p>Delicately wrapped, juicy veg or chicken fillings, steamed to perfection or fried crisp. Served with our signature fiery red chili dip.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹60</span>
+                        <a href="#" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Order</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
 
-    <div id="about" style="padding: 60px 20px; text-align: center; background-color: white;">
-        <h2>About Us</h2>
-        <div class="section-underline"></div>
-        <p style="max-width: 600px; margin: 0 auto; color: #555;">Mishra Hotel serves the most authentic street food, bringing the true taste of Mumbai and Himalayas to your plate.</p>
-    </div>
+    <!-- About/Info Section -->
+    <section class="info-section" id="about">
+        <div class="info-container">
+            <h2>Fresh. Spicy. Unforgettable.</h2>
+            <p style="margin-top: 15px; font-size: 1.1rem;">
+                At MISHRA HOTEL, we bring together the best of street flavors. Whether you crave the comforting crunch of a classic Bada Pao or the juicy punch of hot Momos, we have got your cravings covered.
+            </p>
+        </div>
+    </section>
 
-    <footer id="payment">
-        <p class="footer-tagline">Fresh. Spicy. Unforgettable.</p>
-        <p class="footer-details">At MISHRA HOTEL, we bring together the best of street flavors. Whether you crave the comforting crunch of a classic Bada Pav or the juicy punch of hot Momos, we have got your cravings covered.</p>
-        
-        <div class="footer-payment">
-            <h3>Online Delivery Payment</h3>
-            <p>9692842456</p>
-            <p>Owner - Mr. Santanu Mishra</p>
-            <br>
-            <img src="your-payment-qr-code.png" alt="Payment QR Code" style="width:150px; border:1px solid #ccc;"> </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MISHRA HOTEL. All Rights Reserved.| Owner-Mr. Santanu Mishra| contract No - 9692842456 | Hotel Manager - Mr. Sushil Panda | Alternative Owner- Mr.Prashanjit Malick | Head Chef Mrs.Rupali Priyadarshani | Visit us for the best snacks in town!</p>
     </footer>
-
-    <script>
-        function openNav() {
-            document.getElementById("mySideNav").style.width = "250px";
-        }
-        function closeNav() {
-            document.getElementById("mySideNav").style.width = "0";
-        }
-    </script>
 
 </body>
 </html>
+
+    
